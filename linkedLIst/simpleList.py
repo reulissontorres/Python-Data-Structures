@@ -104,3 +104,20 @@ class LinkedList(object):
         else:
             return None
 
+  def printLastN(self, n):
+    slow = fast = self.head
+    count = 0
+    while count < n and fast:
+      fast = fast.next
+      count += 1
+    while fast.next != None:
+      slow = slow.next
+      fast = fast.next
+    return ("Node (m - %d) has value %s"%(n, slow.data))
+    
+  def printReverse(self, head):
+    if head == None:
+      return
+    self.printReverse(head.next)
+    print(head.data)
+    
