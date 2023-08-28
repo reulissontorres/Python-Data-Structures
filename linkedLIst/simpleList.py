@@ -121,3 +121,19 @@ class LinkedList(object):
     self.printReverse(head.next)
     print(head.data)
     
+def insertInOrder(self, k):
+if self.length == 0:
+  self.insertAtBeginning(k)
+
+current = self.head
+while current.next != None:
+  if current.next.data < k:
+    break
+  current = current.next
+
+newNode = Node(k)
+if current.next == None:
+  current.next = newNode
+else:
+  newNode.next = current.next
+  current.next = newNode
