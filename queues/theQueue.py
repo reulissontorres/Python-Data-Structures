@@ -1,3 +1,10 @@
+from stacks.stackArray import Stack
+import sys
+
+
+sys.path.append('C:\\Users\\aliss\Code\\repositories\\Python-Data-Structures')
+
+
 class Node:
     def __init__(self, data=None, next=None, prev=None):
         self.data = data
@@ -5,8 +12,8 @@ class Node:
         self.prev = prev
 
     def __str__(self):
-        return f'Node[Data={self.data}]'
-    
+        return f"Node[Data={self.data}]"
+
 
 class Queue:
     def __init__(self):
@@ -40,16 +47,16 @@ class Queue:
             self.front = self.front.next
             self.size -= 1
             return n
-        
+
     def front(self):
         return self.front.data
-    
+
     def rear(self):
         return self.rear.data
-    
+
     def is_empty(self):
         return self.size <= 0
-    
+
     def __str__(self):
         if self.is_empty():
             return "Queue is empty"
@@ -59,4 +66,15 @@ class Queue:
             queue_str += str(current.data) + " "
             current = current.next
         return queue_str.strip()
-    
+
+    """inverter uma fila usando uma pilha"""
+
+    def reverse_queue(self):
+        s = Stack(self.size)
+        current = self.front
+        while current is not None:
+            s.push(current.data)
+            current = current.next
+
+        while not s.is_empty:
+            print(s.pop())

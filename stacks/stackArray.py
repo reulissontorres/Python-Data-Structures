@@ -28,10 +28,10 @@ class Stack:
             return
         return self.A[self.top]
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.top == -1
 
-    def isFull(self):
+    def is_full(self):
         return self.Capacity == self.top + 1
 
 
