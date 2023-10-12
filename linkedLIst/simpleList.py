@@ -104,36 +104,36 @@ class LinkedList(object):
         else:
             return None
 
-  def printLastN(self, n):
-    slow = fast = self.head
-    count = 0
-    while count < n and fast:
-      fast = fast.next
-      count += 1
-    while fast.next != None:
-      slow = slow.next
-      fast = fast.next
-    return ("Node (m - %d) has value %s"%(n, slow.data))
+    def printLastN(self, n):
+        slow = fast = self.head
+        count = 0
+        while count < n and fast:
+            fast = fast.next
+        count += 1
+        while fast.next != None:
+            slow = slow.next
+        fast = fast.next
+        return ("Node (m - %d) has value %s"%(n, slow.data))
     
-  def printReverse(self, head):
-    if head == None:
-      return
-    self.printReverse(head.next)
-    print(head.data)
+    def printReverse(self, head):
+        if head == None:
+            return
+        self.printReverse(head.next)
+        print(head.data)
     
-def insertInOrder(self, k):
-if self.length == 0:
-  self.insertAtBeginning(k)
+    def insertInOrder(self, k):
+        if self.length == 0:
+            self.insertAtBeginning(k)
 
-current = self.head
-while current.next != None:
-  if current.next.data < k:
-    break
-  current = current.next
+        current = self.head
+        while current.next != None:
+            if current.next.data < k:
+                break
+        current = current.next
 
-newNode = Node(k)
-if current.next == None:
-  current.next = newNode
-else:
-  newNode.next = current.next
-  current.next = newNode
+        newNode = Node(k)
+        if current.next == None:
+            current.next = newNode
+        else:
+            newNode.next = current.next
+            current.next = newNode

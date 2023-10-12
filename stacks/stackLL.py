@@ -29,5 +29,5 @@ class Stack:
             raise IndexError
         return self.head.data
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.head == None

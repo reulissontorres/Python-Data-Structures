@@ -33,12 +33,3 @@ class Stack:
 
     def is_full(self):
         return self.Capacity == self.top + 1
-
-
-stack = Stack(10)
-for x in range(10):
-    stack.push(random.randint(1, 21))
-for x in range(12):
-    temp = stack.pop()
-    if temp is not None:
-        print(temp)
