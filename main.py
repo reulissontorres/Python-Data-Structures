@@ -1,12 +1,25 @@
-from queues.theQueue import Queue
-from linkedLIst.doublyList import DoublyLL
+from trees.binaryTree import BinnaryTree, Node
 
-q = Queue()
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-q.enqueue(4)
-print(q.__str__())
+a = Node('a')
+b = Node('b')
+c = Node('c')
+d = Node('d')
 
-q.reverse()
-print(q.__str__())
+a.left = b
+b.isLeft = True
+b.father = a
+
+a.right = c
+c.father = a
+
+b.left = d
+d.isLeft = True
+d.father = b
+
+bt = BinnaryTree(a)
+
+bt.inOrder(a)
+print('\n')
+bt.preOrder(a)
+print('\n')
+bt.postOrder(a)
